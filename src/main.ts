@@ -5,11 +5,11 @@ import { ValidationPipe } from '@nestjs/common';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  process.env.TZ = '-03:00';
+  process.env.TZ = '-03:00'; // Configurando o fuso-horário
 
-  app.useGlobalPipes(new ValidationPipe()); // 
+  app.useGlobalPipes(new ValidationPipe()); // Habilataremos o Validation Globalmente
 
-  app.enableCors();
+  app.enableCors();  // Habilitamos requisições de outras origens (Servidores)
 
   await app.listen(4000);
 }
