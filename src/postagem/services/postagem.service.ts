@@ -9,7 +9,7 @@ export class PostagemService {
   constructor(
     @InjectRepository(Postagem)
     private postagemRepository: Repository<Postagem>,
-    private TemaService: TemaService,
+    private temaService: TemaService,
   ) {}
 
   async findAll(): Promise<Postagem[]> {
@@ -17,6 +17,7 @@ export class PostagemService {
     return await this.postagemRepository.find({
       relations: {
         tema: true,
+        usuario: true
       },
     });
   }
@@ -28,6 +29,7 @@ export class PostagemService {
       },
       relations: {
         tema: true,
+        usuario: true
       },
     });
     if (!postagem)
@@ -43,6 +45,7 @@ export class PostagemService {
       },
       relations: {
         tema: true,
+        usuario: true
       },
     });
   }

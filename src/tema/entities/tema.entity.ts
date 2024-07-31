@@ -4,7 +4,6 @@ import { Postagem } from "../../postagem/entities/postagem.entity";
 
 @Entity({name: "tb_tema"})
 export class Tema{
-    [x: string]: any;
 
     @PrimaryGeneratedColumn()   
     id: number

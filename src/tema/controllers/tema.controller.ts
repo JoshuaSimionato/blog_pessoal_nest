@@ -1,9 +1,10 @@
-import { RelationQueryBuilder } from 'typeorm';
+import { JwtAuthGuard } from '../../auth/guard/jwt-auth.guard';
 import { Tema } from '../entities/tema.entity';
 import { TemaService } from './../services/tema.service';
-import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put } from "@nestjs/common";
+import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put, UseGuards } from "@nestjs/common";
 
 
+@UseGuards(JwtAuthGuard)
 @Controller("/tema")  // Define um controlador que lida com solicitação Http
 export class TemaController{
 

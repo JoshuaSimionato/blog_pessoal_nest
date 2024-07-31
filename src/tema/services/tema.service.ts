@@ -57,7 +57,7 @@ export class TemaService{
         let buscaTema: Tema = await this.findById(tema.id)
 
         if (!buscaTema || !tema.id)
-            throw new HttpException('Postagem não encotrada!', HttpStatus.NOT_FOUND);
+            throw new HttpException('Postagem não encontrada!', HttpStatus.NOT_FOUND);
 
         return await this.temaRepository.save(tema)
     }
