@@ -1,7 +1,11 @@
-export class UsuarioLogin {
-    
-    public usuario: string;
+import { ApiProperty } from "@nestjs/swagger"
 
-    public senha: string;
+export class UsuarioLogin {
+
+    @ApiProperty() 
+    public usuario: string
+
+    @ApiProperty() 
+    public senha: string
 
 }
